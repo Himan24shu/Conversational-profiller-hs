@@ -9,7 +9,7 @@ To get started
 > *Clone the repository*
 
 ```
-git clone https://github.com/HarshMishra2002/whatsapp-chat-analyzer.git
+git clone [https://github.com/Himan24shu/Conversational-profiller-hs].git
 ```
 ---
 
