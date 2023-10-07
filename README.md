@@ -3,7 +3,6 @@ I have made an End to End Streamlit project. Its a web app for whatsapp chat ana
 
 All the datils of the code and project has been mentioned in my medium blog so do give it a check
 
-[**Whatsapp Chat Analyzer Web App : End to End Streamlit Project - medium.com**](https://medium.com/@harshmishraandheri/whatsapp-chat-analyzer-web-app-end-to-end-streamlit-project-d6b3dfb12115 "Whatsapp chat analyzer")
 
 To get started 
 
