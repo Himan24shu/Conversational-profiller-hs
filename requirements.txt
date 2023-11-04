@@ -5,3 +5,7 @@ urlextract
 wordcloud
 pandas
 emoji
+re
+PIL
+streamlit_lottie
+requests
