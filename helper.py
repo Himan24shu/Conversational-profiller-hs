@@ -1,13 +1,14 @@
 from urlextract import URLExtract
 from wordcloud import WordCloud
+
 extract = URLExtract()
 import pandas as pd
 from collections import Counter
 import emoji
+import re
 
 
 def fetch_stats(selected_user, df):
-
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
 
@@ -31,8 +32,8 @@ def fetch_most_busy_users(df):
         columns={'index': 'name', 'user': 'percent'})
     return x, df
 
-def create_word_cloud(selected_user,df):
 
+def create_word_cloud(selected_user, df):
     f = open('stop_hinglish.txt', 'r')
     stop_words = f.read()
 
@@ -49,14 +50,14 @@ def create_word_cloud(selected_user,df):
                 y.append(word)
         return " ".join(y)
 
-    wc = WordCloud(width=500,height=500,min_font_size=10,background_color='white')
+    wc = WordCloud(width=500, height=500, min_font_size=10, background_color='white')
     temp['message'] = temp['message'].apply(remove_stop_words)
     df_wc = wc.generate(temp['message'].str.cat(sep=" "))
     return df_wc
 
-def most_common_words(selected_user,df):
 
-    f = open('stop_hinglish.txt','r')
+def most_common_words(selected_user, df):
+    f = open('stop_hinglish.txt', 'r')
     stop_words = f.read()
 
     if selected_user != 'Overall':
@@ -75,14 +76,24 @@ def most_common_words(selected_user,df):
     most_common_df = pd.DataFrame(Counter(words).most_common(20))
     return most_common_df
 
+
+def extract_emojis(text):
+    emoji_pattern = re.compile(
+        r'[\U0001F600-\U0001F64F\U0001F300-\U0001F5FF\U0001F680-\U0001F6FF\U0001F700-\U0001F77F\U0001F780-\U0001F7FF\U0001F800-\U0001F8FF\U0001F900-\U0001F9FF\U0001FA00-\U0001FA6F\U0001FA70-\U0001FAFF\U0001FB00-\U0001FBFF\U0001F004\U0001F0CF\U0001F004\U0001F004\U0001F004\U0001F004]+',
+        flags=re.UNICODE)
+    emojis = re.findall(emoji_pattern, text)
+    return emojis
+
+
 def emoji_helper(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
     emojis = []
     for message in df['message']:
-        emojis.extend([c for c in message if c in emoji.UNICODE_EMOJI['en']])
+        emojis.extend(extract_emojis(message))
     emoji_df = pd.DataFrame(Counter(emojis).most_common(20))
     return emoji_df
+
 
 def monthly_timeline(selected_user, df):
     if selected_user != 'Overall':
@@ -95,6 +106,7 @@ def monthly_timeline(selected_user, df):
     timeline['time'] = time
     return timeline
 
+
 def daily_timeline(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
@@ -102,11 +114,13 @@ def daily_timeline(selected_user, df):
     daily_timeline = df.groupby('only_date').count()['message'].reset_index()
     return daily_timeline
 
+
 def week_activity_map(selected_user, df):
     if selected_user != 'Overall':
         df = df[df['user'] == selected_user]
 
     return df['day_name'].value_counts()
+
 
 def month_activity_map(selected_user, df):
     if selected_user != 'Overall':
