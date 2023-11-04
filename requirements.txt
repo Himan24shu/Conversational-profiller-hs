@@ -7,4 +7,4 @@ pandas
 emoji
 PIL
 streamlit_lottie
-requests
+requests:2.24.0
