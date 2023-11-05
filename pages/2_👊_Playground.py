@@ -28,8 +28,11 @@ with st.container():
             - Click on More
             - Click on Export Chat
             - Click on "Without Media"
-            - Upload File below
+            - Upload .txt File below
+            - Phone users try to save .txt file in google drive than upload as whatsapp has stopped local storage for extracted chat.
+            - PC users can upload file from there PC location after saving the chat.
             """
+
         )
     with right_column:
         st_lottie(WhatsApp_Animation, height=300, key="about")
