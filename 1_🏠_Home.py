@@ -29,6 +29,8 @@ local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
+About_Animation= load_lottieurl("https://lottie.host/8bdd61b1-5a00-4422-bd6c-e5027963c766/FU1B036IlG.json")
+
 img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 
 # ---- HEADER SECTION ----
@@ -51,8 +53,8 @@ with st.container():
         st.write("##")
         st.write(
             """
-             The project basicaaly analyze the WhatsApp chat:
-            - This Project aims to develop a powerfuland user-friendly application that provides valuable insights and statistical analysis from
+             The project basically analyze the WhatsApp chat:
+            - This Project aims to develop a powerful and user-friendly application that provides valuable insights and statistical analysis from
             WhatsApp chat conversations. 
             - In today's digital age, messaging platforms like WhatsApp have become integral to our daily lives, serving as a primary means of communication for billions of
             users worldwide. 
@@ -62,6 +64,8 @@ with st.container():
             Note : None of you date is getting stored in Any database, so feel free to use it.
             """
         )
+    with right_column:
+        st_lottie(About_Animation, height=300, key="about")
 
 # ---- WHAT I DO ----
 with st.container():
