@@ -1,12 +1,13 @@
 import streamlit as st
 
+st.set_page_config(page_title="Contact Me", page_icon=":telephone:", layout="wide")
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 local_css("style/style.css")
 
-st.title(":mailbox: Get In Touch with me!")
+st.title(":mailbox: To Provide Feedback or Get In Touch with me!")
 
 contact_form = """
     <form action="https://formsubmit.co/himan24shu@GMAIL.COM" method="POST">

@@ -4,12 +4,17 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 
 
-def load_lottieurl(url):
-    r = requests.get(url)
-    if r.status_code != 200:
-        return None
-    return r.json()
 
+#pageConfiguartion
+st.set_page_config(
+    page_title='Home Page',
+    page_icon=':wave:',
+    layout='wide',
+    initial_sidebar_state='auto',
+    menu_items={
+        'About': 'This App is developed by Himanshu Sharma to reach out please go in Contact section'
+    }
+)
 hide_st_style= """
             <style>
             #MainMenu {visibilty:hidden;}
@@ -19,7 +24,11 @@ hide_st_style= """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
-
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
 # Use local CSS
 def local_css(file_name):
     with open(file_name) as f:

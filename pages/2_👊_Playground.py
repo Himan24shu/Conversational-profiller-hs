@@ -3,9 +3,37 @@ import seaborn as sns
 import streamlit as st
 import helper
 import preprocessor
+import requests
+from streamlit_lottie import st_lottie
 
-st.set_page_config(page_title="Conversational_profiler", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Conversational_profiler", page_icon=":bar_chart:", layout="wide")
+
+def load_lottieurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+WhatsApp_Animation= load_lottieurl("https://lottie.host/d5d4f84f-6de0-4b9c-8083-f88500da10dc/A5W74dRAQg.json")
+
 st.title("Whatsapp Chat Analyzer")
+with st.container():
+    left_column, center_column,right_column = st.columns(3)
+    with left_column:
+        st.header("How to Extract Chat :book:")
+        st.write(
+            """
+            - Open any of your what's App chat 
+            - Click on Three dot at Right Top
+            - Click on More
+            - Click on Export Chat
+            - Click on "Without Media"
+            - Upload File below
+            """
+        )
+    with right_column:
+        st_lottie(WhatsApp_Animation, height=300, key="about")
+
 
 hide_st_style= """
             <style>
@@ -15,6 +43,12 @@ hide_st_style= """
 """
 
 st.markdown(hide_st_style, unsafe_allow_html=True)
+
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+local_css("style/style.css")
 
 uploaded_file = st.file_uploader("Choose a file")
 if uploaded_file is not None:
