@@ -36,7 +36,7 @@ with st.container():
     st.subheader("Hi, I am Himanshu Sharma :wave:")
     st.title("A Software Engineer in this Technical World :wink:")
     st.write(
-        "I am passionate about finding ways to Learn new stuffs to be more efficient and effective in Software Developers."
+        "I am passionate about finding ways to Learn new stuffs."
     )
     #st.write("[Learn More >](https://pythonandvba.com)")
 
@@ -51,20 +51,17 @@ with st.container():
         st.write("##")
         st.write(
             """
-             :
-            - I was student of Computer Application have pursued my Graduation in BCA
-            - Working as a Software Engineer in WIPRO, leading team in ASP.NET
-            - I have been experienced in Duck Creek technology(Finance tool).
-            - Also my Expertise lies in SQl, Python, Streamlit, VB.Net, Duck Creek, ASP.net, HTML, CSS, JS
-
-            If this sounds interesting to you, Do reach out to me for any Collaboration or Business related stuffs.
+             The project basicaaly analyze the WhatsApp chat:
+            - This Project aims to develop a powerfuland user-friendly application that provides valuable insights and statistical analysis from
+            WhatsApp chat conversations. 
+            - In today's digital age, messaging platforms like WhatsApp have become integral to our daily lives, serving as a primary means of communication for billions of
+            users worldwide. 
+            - By harnessing the vast amount of data generated through these conversations, this project seeks to empower users with a deeper understanding of their
+            communication patterns, sentiment analysis, and content trends.
+            
+            Note : None of you date is getting stored in Any database, so feel free to use it.
             """
         )
-        st.header("Social Media handles")
-        st.write("##")
-        st.write("[Linkedin >](https://www.linkedin.com/in/himanshu-sharma-b80220155/)")
-    with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
 
 # ---- WHAT I DO ----
 with st.container():
