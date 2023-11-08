@@ -9,35 +9,8 @@ git clone https://github.com/Himan24shu/Conversational-profiller-hs.git
 ```
 ---
 
-Installation 
 
-```
-pip install streamlit
-```
-```
-pip install matplotlib
-```
-```
-pip install seaborn
-```
-```
-pip install urlextract
-```
-```
-pip install wordcloud
-```
-```
-pip install pandas
-```
-```
-pip install emoji
-```
----
-Usage
 
-```
-streamlit run app.py
-```
 Implementation
 
 Whatsapp Chat Analyzer 
