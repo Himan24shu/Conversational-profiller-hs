@@ -100,7 +100,7 @@ if uploaded_file is not None:
         plt.xticks(rotation='vertical')
         st.pyplot(fig)
 
-        st.title("Daily Timeline")
+        st.title("Yearly Timeline")
         daily_timeline = helper.daily_timeline(selected_user, df)
         fig, ax = plt.subplots()
         ax.plot(daily_timeline['only_date'], daily_timeline['message'], color='green')
