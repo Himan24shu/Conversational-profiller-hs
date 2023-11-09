@@ -78,7 +78,12 @@ def preprocess(data):
 
             return None
 
-        df['message_date'] = pd.to_datetime(df['message_date'], format='%m/%d/%y, %I:%M %p - ')
+        for date_format in ['%d/%m/%y, %I:%M %p - ', '%m/%d/%y, %I:%M %p - ']:
+            try:
+                df['message_date'] = pd.to_datetime(df['message_date'], format=date_format)
+                break
+            except ValueError:
+                pass
         df['message_date'] = df['message_date'].apply(lambda x: x.strftime('%Y-%m-%d %H:%M:%S'))
 
         users = []

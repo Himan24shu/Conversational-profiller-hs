@@ -70,7 +70,7 @@ with st.container():
             - By harnessing the vast amount of data generated through these conversations, this project seeks to empower users with a deeper understanding of their
             communication patterns, sentiment analysis, and content trends.
             
-            Note : None of you date is getting stored in Any database, so feel free to use it.
+            Note : None of you data is getting stored in Any database, so feel free to use it.
             """
         )
     with right_column:
@@ -87,6 +87,7 @@ with st.container():
             """
             I am Software Engineer always eager to learn new stuffs, My Expertise :
             - I was student of Computer Application have pursued my Graduation in BCA
+            - Have completed my master in C
             - Working as a Software Engineer in WIPRO, leading team in ASP.NET
             - I have been experienced in Duck Creek technology(Finance tool).
             - Also my Expertise lies in SQl, Python, Streamlit, VB.Net, Duck Creek, ASP.net, HTML, CSS, JS
