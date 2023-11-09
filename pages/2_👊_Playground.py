@@ -161,6 +161,7 @@ if uploaded_file is not None:
         st.title("Most Common Words")
         most_common_df = helper.most_common_words(selected_user, df)
         fig, ax = plt.subplots()
+        plt.rcParams['font.sans-serif'] = 'Segoe UI Emoji'
         ax.barh(most_common_df[0], most_common_df[1])
         plt.xticks(rotation='vertical',fontsize=12)
         st.pyplot(fig)
@@ -175,7 +176,7 @@ if uploaded_file is not None:
             with col2:
                 fig, ax = plt.subplots()
                 plt.rcParams['font.sans-serif'] = 'Segoe UI Emoji'
-                ax.pie(emoji_df[1].head(), labels=emoji_df[0].head(), autopct="%0.2f")
+                ax.pie(emoji_df[1].head(), labels=emoji_df[1].head(), autopct="%0.2f")
                 st.pyplot(fig)
         except:
             st.subheader(":smile: You don't have emoji in chat.")
