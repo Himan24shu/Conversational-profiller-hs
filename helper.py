@@ -27,10 +27,16 @@ def fetch_stats(selected_user, df):
 
 
 def fetch_most_busy_users(df):
-    x = df['user'].value_counts().head()
-    df = round((df['user'].value_counts() / df.shape[0]) * 100, 2).reset_index().rename(
+    df_filtered = df[df['user'] != 'group_notification']
+
+    # Get the most busy users (excluding 'group_notification')
+    x = df_filtered['user'].value_counts().head()
+
+    # Calculate the percentage based on the filtered DataFrame
+    df_percentage = round((df_filtered['user'].value_counts() / df_filtered.shape[0]) * 100, 2).reset_index().rename(
         columns={'index': 'name', 'user': 'percent'})
-    return x, df
+
+    return x, df_percentage
 
 
 def create_word_cloud(selected_user, df):
