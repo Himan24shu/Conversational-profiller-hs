@@ -86,7 +86,7 @@ with st.container():
         st.write(
             """
             I am Software Engineer always eager to learn new stuffs, My Expertise :
-            - I was student of Computer Application have pursued my Graduation in BCA
+            - I was student of Computer Application have pursued my Graduation in BCA and have completed my Masters from BITS Pillani.
             - Have completed my master in C
             - Working as a Software Engineer in WIPRO, leading team in ASP.NET
             - I have been experienced in Duck Creek technology(Finance tool).
